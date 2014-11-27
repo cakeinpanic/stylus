@@ -5,11 +5,9 @@ obj = {
     a: 'a'
     b: 'c'
     nest: {
-      q: '1',
-      b: 'bar'
+      q: '1'
     }
   }
-
 }
 
 obj2 = {
@@ -22,12 +20,10 @@ obj2 = {
   }
 }
 
-
 body
 
   test: merge(obj, obj2, { qux: 'qux' }, true).qux
   test: extend(obj, { foo: 'foo1' }).foo
-  test: merge(obj,obj2, true).abc.a
-  test: merge(obj,{abc: 'abc'}).abc
-  test: merge(obj,obj2, true).abc.nest.q
-  test: merge(obj,obj2, false).abc.nest.b
+  test: obj.abc.a
+  test: obj.abc.nest.q
+  test: merge(obj, { abc: 'abc' }).abc
